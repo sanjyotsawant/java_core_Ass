@@ -1,0 +1,216 @@
+
+
+52.	Input name of a person and count how many vowels it contains.  Use String class functions.
+
+
+package A8;
+
+import java.util.Scanner;
+
+public class Q52 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Enter String : ");
+		
+		String s = sc.nextLine();
+		
+		int n=0;
+		for(int i=0; i<s.length();i++) {
+			if(s.charAt(i)=='a' || s.charAt(i)=='e' ||
+					s.charAt(i)=='i' || s.charAt(i)=='o' ||
+					s.charAt(i)=='u') {
+				n++;
+			}
+		}
+		System.out.println("Number of Vowels in sentence : "+n);
+	}
+
+}
+
+
+
+=====================================================================
+ 
+53.	Input data exactly in the following format, and print sum of all integer values. “67, 89, 23, 67, 12, 55, 66”.   (Hint use String class split method and Integer class parseInt method) .
+
+package A8;
+
+import java.util.Scanner;
+
+public class Q53 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Enter String : ");
+		
+		String s = sc.nextLine();
+		
+		String ar[] = s.split(" ");
+		int sum=0;
+		for(String a:ar) {
+			sum+=Integer.parseInt(a);
+		}
+		
+		System.out.println("Sum :"+sum);
+		
+	}
+
+}
+
+
+
+=====================================================================
+
+
+54.	Write a program to reverse the given String.
+
+package A8;
+
+import java.util.Scanner;
+
+public class Q54 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Enter String : ");
+		
+		String s = sc.nextLine();
+		String s1="";
+		int j=0;
+		for(int i=s.length()-1; i>=0; i--) {
+			s1=s1+s.charAt(i);
+		}
+		
+		System.out.println("Reverse of the string: "+s1);
+	}
+
+	
+}
+
+
+
+
+====================================================================
+
+
+55.	Write a program to count no of words in the String.
+
+
+package A8;
+
+import java.util.Scanner;
+
+public class Q55 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Enter String : ");
+		
+		String s = sc.nextLine();
+		
+		String ar[]=s.split(" ");
+		int count=0;
+		for(String a:ar) {
+			count++;
+		}
+		
+		System.out.println("Number of words : "+count);
+	}
+
+}
+
+
+
+===================================================================
+
+
+56.	Write a program to convert very first character of every word in uppercase in a String.
+
+
+
+
+
+===================================================================
+
+
+
+57.	Write a program to reverse every word of the String.
+
+package A8;
+
+import java.util.Scanner;
+
+public class Q57 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Enter String : ");
+		
+		String s = sc.nextLine();
+		String s1="";
+		String ar[]=s.split(" ");
+		
+		for(String a:ar) {
+			StringBuilder sb=new StringBuilder(a);  
+	        sb.reverse();  
+	        s1+=sb.toString()+" ";  
+		}
+		System.out.println(s1);
+	}
+
+}
+
+
+
+===================================================================
+
+58.	Store name of weekdays in an array (starting from “Sunday” at 0 index). Ask day position from user and print day name. Handle array index out of bound exception and give proper message if user enter day index outside range (0-6).
+
+package A8;
+
+import java.util.Scanner;
+
+public class Q58 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner (System.in);
+		
+		// TODO Auto-generated method stub
+		String day[]= {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+		try {
+			
+			System.out.println("Enter day position : ");
+			int n = sc.nextInt();
+			for(int i=0; i<=n; i++) {
+				if(i==n) {
+					System.out.println("Day : "+day[i]);
+					
+				}
+			}
+		}catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Index Out of the renge.");
+		}
+			
+	}
+
+}
+
+ 
+
+
+==================================================================
+
+
+59.	Create a class Voter(voterId, name, age) with parameterized constructor.  The parameterized constructor should throw a checked exception if age is less than 18. The message of exception is “invalid age for voter ” 
+
+
+	

@@ -1,0 +1,80 @@
+
+50.	Explain the importance of toString() and equals() method of the Object class and override them on class Employee(empId,name,salary).  a. Create class for main method(say XYZ),and accept five employees information and store in an array. Also ensure if entered empId already exist or not (use equals method).  b. Display all employee info using toString method.
+
+
+package Ass_7;
+
+import java.util.Scanner;
+
+import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
+
+class Employee{
+	int empId;
+	String name;
+	double salary;
+	
+	Employee(int empId, String name, double salary){
+		this.empId=empId;
+		this.name=name;
+		this.salary=salary;
+	}
+	
+	@Override
+	public String toString() {
+		return empId+" "+name+" "+salary;
+	}
+}
+
+public class XYZ {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		Employee ar[]=new Employee[3];
+		for(int i=0; i<ar.length; i++) {
+			System.out.println("Enter Emp ID for Employee "+ (i+1));
+			int id =sc.nextInt();
+			System.out.println("Enter Emp Name for Employee "+ (i+1));
+			String n =sc.next();
+			System.out.println("Enter Emp Salary for Employee "+ (i+1));
+			double sal =sc.nextDouble();
+			
+			Employee e = new Employee(id, n, sal);
+			ar[i]=e;
+		}
+		
+		
+		for(Employee a:ar) {
+			System.out.println(a);
+		}
+		
+		System.out.println("Enter empid :");
+		int i = sc.nextInt();
+		int n=0;
+		for(Employee a:ar) {
+			if(i==a.empId) {
+				n++;
+			}
+			
+		}
+		if(n>0) {
+			System.out.println("Empid already exist.");
+		}
+		else
+			System.out.println("Empid not exist.");
+
+	}
+
+}
+
+
+
+
+=================================================================================================
+
+
+51.	Create a program that helps banks to maintain records. It should have following facilities. o Anybody can create current or saving account with following initial information: account number, name, balance, and branch. o display account detail for a particular accounts. o display total money deposited in bank. o allow deposit and  withdrawal in an account  . o for saving account opening balance and minimum balance must be 5000. o for current account opening balance and minimum balance must be 1000. o can not withdraw the amount from the account that makes balance less than the minimum balance. 
+
+
+
+
